@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  LoginScreen
-//
-//  Created by Federico on 13/11/2021.
-//
+
 
 import SwiftUI
 
@@ -18,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.blue
+                Color.grey
                     .ignoresSafeArea()
                 Circle()
                     .scale(1.7)
@@ -33,7 +28,7 @@ struct ContentView: View {
                         .bold()
                         .padding()
                     
-                    TextField("Username", text: $username)
+                    TextField("Nome de usuário", text: $username)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
@@ -41,7 +36,7 @@ struct ContentView: View {
                         .border(.red, width: CGFloat(wrongUsername))
                         
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Senha", text: $password)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
@@ -56,7 +51,7 @@ struct ContentView: View {
                     .background(Color.blue)
                     .cornerRadius(10)
                     
-                    NavigationLink(destination: Text("You are logged in @\(username)"), isActive: $showingLoginScreen) {
+                    NavigationLink(destination: Text("Logado como @\(username)"), isActive: $showingLoginScreen) {
                         EmptyView()
                     }
                 }
@@ -65,7 +60,7 @@ struct ContentView: View {
     }
     
     func authenticateUser(username: String, password: String) {
-        if username.lowercased() == "mario2021" {
+        if username.lowercased() == "petpark 2022" {
             wrongUsername = 0
             if password.lowercased() == "abc123" {
                 wrongPassword = 0
